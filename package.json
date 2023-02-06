@@ -12,6 +12,10 @@
   },
   "author": "UKeeShon",
   "license": "GPL-3.0-or-later",
+  "type": "module",
+  "bin":{
+	  "galosh.js": "./cli.js"
+  },
   "bugs": {
     "url": "https://github.com/comp426-2023-spring/a02-functions-UKeeShon/issues"
   },
