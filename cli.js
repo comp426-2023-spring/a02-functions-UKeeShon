@@ -53,11 +53,19 @@ const reponse = await fetch(url);
 
 const data = await response.json();
 
-if ("j" in args){
+if (args.j){
 	console.log(data);
-	process.exit(0);
+	process.exit();
 }
 
-const days = args["d"];
+const days = args.d;
+
+if (days == 0) {
+	console.log("today.")
+}else if （days > 1）{
+	console.log("in " + days + " days.")
+}else{
+	console.log("tomorrow.")
+}
 
 
