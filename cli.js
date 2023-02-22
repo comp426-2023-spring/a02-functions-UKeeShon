@@ -53,4 +53,11 @@ const reponse = await fetch(url);
 
 const data = await response.json();
 
+if ("j" in args){
+	console.log(data);
+	process.exit(0);
+}
+
+const days = args["d"];
+
 
