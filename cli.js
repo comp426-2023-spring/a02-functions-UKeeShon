@@ -9,15 +9,15 @@ const args = minimist(process.argv.slice(2));
 if(args.h){
 	console.log(
 
-		`
-		Usage:galosh.js [options] - [n|s] LATITUDE  -[e|w] lONGITUDE -z TIME_ZONE
-		-h 	Show this help message and exit.
-		-n, -s  Latitude: N positive; S negative.
-		-e, -w  Longitude: E positive; W negative.
-		-z	Time zone: uses tz.guess() from moment-timezone by default.
-		-d 0-6  Day to retrieve weather: 0 is today; defaults to 1. 
-		-j	Echo pretty JSON from open -meteo API and exit.
-		`
+`
+Usage: galosh.js [options] - [n|s] LATITUDE  -[e|w] lONGITUDE -z TIME_ZONE
+-h 	Show this help message and exit.
+-n, -s  Latitude: N positive; S negative.
+-e, -w  Longitude: E positive; W negative.
+-z	Time zone: uses tz.guess() from moment-timezone by default.
+-d 0-6  Day to retrieve weather: 0 is today; defaults to 1. 
+-j	Echo pretty JSON from open -meteo API and exit.
+`
 	);
 	process.exit(0);
 }
@@ -40,7 +40,7 @@ if (latitude === undefined || Math.abs(latitude)>90){
 }
 if (longitude === undefined || Math.abs(longitude)>180){
 	console.log("Longitude must be in range");
-	process,exit(0);
+	process.exit(0);
 }
 
 let timezone = moment.tz.guess();
