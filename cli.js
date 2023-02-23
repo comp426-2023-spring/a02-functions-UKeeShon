@@ -35,7 +35,7 @@ if (args.e){
 }
 
 if (latitude === undefined || Math.abs(latitude)>90){
-	console.log("Latitude must be in range"
+	console.log("Latitude must be in range");
 	process.exit(0);
 }
 if (longtitude === undefined || Math.abs(longitude)>180){
