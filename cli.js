@@ -22,7 +22,7 @@ if(args.h){
 	process.exit(0);
 }
 
-let latitude,longtitude;
+let latitude,longitude;
 if (args.n){
 	latitude = args.n;
 }else if (args.s) {
@@ -38,8 +38,8 @@ if (latitude === undefined || Math.abs(latitude)>90){
 	console.log("Latitude must be in range");
 	process.exit(0);
 }
-if (longtitude === undefined || Math.abs(longitude)>180){
-	console.log("Longtitude must be in range");
+if (longitude === undefined || Math.abs(longitude)>180){
+	console.log("Longitude must be in range");
 	process,exit(0);
 }
 
@@ -49,7 +49,7 @@ if(args.t){
 }
 
 const url = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&daily=precipitation_hours&current_weather=true&timezone=" + timezone;
-const reponse = await fetch(url);
+const response = await fetch(url);
 
 const data = await response.json();
 
