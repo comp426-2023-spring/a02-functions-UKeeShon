@@ -35,12 +35,12 @@ if (args.e){
 }
 
 if (latitude === undefined || Math.abs(latitude)>90){
-	console.error("Latitude mustbe provided and must be within the range of -90 to 90 degrees."
-	process.exit(1);
+	console.log("Latitude must be in range"
+	process.exit(0);
 }
 if (longtitude === undefined || Math.abs(longitude)>180){
-	console.error("Longtitude must be provided and must be within the range of -180 to 180 degrees.");
-	process,exit(1);
+	console.log("Longtitude must be in range");
+	process,exit(0);
 }
 
 let timezone = moment.tz.guess();
@@ -48,14 +48,14 @@ if(args.t){
 	timezone = args.t;
 }
 
-const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=precipitation_hours&hours&current_weather=true&timezone=${timezone}`;
+const url = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&daily=precipitation_hours&current_weather=true&timezone=" + timezone;
 const reponse = await fetch(url);
 
 const data = await response.json();
 
 if (args.j){
 	console.log(data);
-	process.exit();
+	process.exit(0);
 }
 
 const days = args.d;
@@ -67,5 +67,4 @@ if (days == 0) {
 }else{
 	console.log("tomorrow.")
 }
-
 
